@@ -56,3 +56,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/parties
+
+###
+GET http://localhost:3000/api/parties/660170bd5e0af6b46ccd5f61
