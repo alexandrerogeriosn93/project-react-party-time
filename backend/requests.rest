@@ -16,3 +16,14 @@ GET http://localhost:3000/api/services/660155bfac512564f576d832
 
 ###
 DELETE http://localhost:3000/api/services/6601583ccd564a62fb6b1495
+
+###
+PUT http://localhost:3000/api/services/660155bfac512564f576d832
+Content-Type: application/json
+
+{
+    "name": "Primeiro Serviço Atualizado",
+    "description": "Descrição do primeiro serviço, após a primeira atualização",
+    "price": 3000,
+    "image": "https://images.unsplash.com/photo-1710975090629-118845a3f848?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
