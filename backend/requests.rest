@@ -27,3 +27,29 @@ Content-Type: application/json
     "price": 3000,
     "image": "https://images.unsplash.com/photo-1710975090629-118845a3f848?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 }
+
+###
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Segundo evento",
+    "author": "Alexandre",
+    "description": "Uma festa em família",
+    "budget": 9000,
+    "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "services": [
+        {
+            "name": "Primeiro Serviço",
+            "description": "Descrição do primeiro serviço",
+            "price": 3000,
+            "image": "https://images.unsplash.com/photo-1710975090629-118845a3f848?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "name": "Segundo Serviço",
+            "description": "Descrição do segundo serviço",
+            "price": 1000,
+            "image": "https://images.unsplash.com/photo-1710975090629-118845a3f848?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+    ]
+}
