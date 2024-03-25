@@ -29,7 +29,7 @@ const partyController = {
 
       res.status(201).json({ response, msg: "Festa criada com sucesso!" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -39,7 +39,7 @@ const partyController = {
 
       res.json(parties);
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -55,7 +55,7 @@ const partyController = {
 
       res.json(party);
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -75,7 +75,7 @@ const partyController = {
         .status(200)
         .json({ deletedParty, msg: "Festa excluída com sucesso!" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -105,7 +105,7 @@ const partyController = {
 
       res.status(200).json({ party, msg: "Festa atualizada com sucesso!" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 };

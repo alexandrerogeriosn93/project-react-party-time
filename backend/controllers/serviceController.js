@@ -14,7 +14,7 @@ const serviceController = {
 
       res.status(201).json({ response, msg: "Serviço criado com sucesso!" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -24,7 +24,7 @@ const serviceController = {
 
       res.json(services);
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -40,7 +40,7 @@ const serviceController = {
 
       res.json(service);
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -60,7 +60,7 @@ const serviceController = {
         .status(200)
         .json({ deletedService, msg: "Serviço deletado com sucesso" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 
@@ -83,7 +83,7 @@ const serviceController = {
 
       res.status(200).json({ service, msg: "Serviço atualizado com sucesso!" });
     } catch (error) {
-      console.log(`Error: ${error}`);
+      console.log(error);
     }
   },
 };
