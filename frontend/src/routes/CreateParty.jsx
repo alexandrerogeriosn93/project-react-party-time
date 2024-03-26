@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+
+import partyFetch from "../axios/config";
+
 const CreateParty = () => {
+  const [services, setSerivces] = useState([]);
+
+  useEffect(() => {
+    const loadServices = async () => {
+      const res = await partyFetch.get("/services");
+
+      setSerivces(res.data);
+    };
+
+    loadServices();
+  }, []);
+
   return (
     <div className="form-page">
       <h2>Crie sua próxima Festa</h2>
@@ -56,7 +74,19 @@ const CreateParty = () => {
         <div>
           <h2>Escolha os serviços</h2>
           <div className="services-container">
-            <p>Serviços...</p>
+            {services.length === 0 && <p>Carregando...</p>}
+            {services.length > 0 &&
+              services.map((service) => (
+                <div className="service" key={service._id}>
+                  <img src={service.image} alt={service.name} />
+                  <p className="service-name">{service.name}</p>
+                  <p className="service-price">R${service.price}</p>
+                  <div className="checkbox-container">
+                    <input type="checkbox" value={service._id} />
+                    <p>Marque para solicitar</p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
         <input type="submit" value="Criar Festa" className="btn" />
