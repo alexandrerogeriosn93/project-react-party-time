@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 
@@ -39,7 +40,9 @@ const Party = () => {
     <div className="party">
       <h1>{party.title}</h1>
       <div className="actions-container">
-        <Link className="btn">Editar</Link>
+        <Link className="btn" to={`/party/edit/${party._id}`}>
+          Editar
+        </Link>
         <button className="btn-secondary" onClick={handleDelete}>
           Excluir
         </button>
