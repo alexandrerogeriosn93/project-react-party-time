@@ -1,20 +1,23 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
 import partyFetch from "../axios/config";
 
+import useToast from "../hook/useToast";
+
 import "./Form.css";
 
 const CreateParty = () => {
   const [services, setSerivces] = useState([]);
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [budget, setBudget] = useState(0);
   const [image, setImage] = useState("");
   const [partyServices, setPartyServices] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadServices = async () => {
@@ -38,17 +41,28 @@ const CreateParty = () => {
     }
   };
 
-  const createParty = (e) => {
+  const createParty = async (e) => {
     e.preventDefault();
 
-    const party = {
-      title,
-      author,
-      description,
-      budget,
-      image,
-      services: partyServices,
-    };
+    try {
+      const party = {
+        title,
+        author,
+        description,
+        budget,
+        image,
+        services: partyServices,
+      };
+
+      const res = await partyFetch.post("/parties", party);
+
+      if (res.status === 201) {
+        navigate("/");
+        useToast(res.data.msg);
+      }
+    } catch (error) {
+      useToast(error.response.data.msg, "error");
+    }
   };
 
   return (
