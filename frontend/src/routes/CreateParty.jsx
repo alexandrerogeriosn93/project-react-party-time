@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import partyFetch from "../axios/config";
 
+import "./Form.css";
+
 const CreateParty = () => {
   const [services, setSerivces] = useState([]);
 
